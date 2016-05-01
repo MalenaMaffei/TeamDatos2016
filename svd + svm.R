@@ -16,7 +16,7 @@ testTrain[inutil] <- list(NULL)
 #testTrain.svd <- svd(testTrain)
 #u <- testTrain.svd$u
 #testTrainU <- u[,1:35]
-#uTrain <- as.data.frame(testTrainU[28001:90000,])
+#uTrain <- as.data.frame(testTrainU[28001:70000,])
 #uTest <- as.data.frame(testTrainU[1:28000,])
 
 class <- as.factor(train$label)
