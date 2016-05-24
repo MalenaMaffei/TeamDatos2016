@@ -11,21 +11,20 @@ testTrain = rbind(test, train.features)
 inutil <- names(testTrain[, sapply(testTrain, function(v) var(v, na.rm=TRUE)==0)])
 testTrain[inutil] <- list(NULL)
 
-#svd comentado para hacer prueba sin nada, si lo quieren usar
-#hay que cambiar en la parte del svm por uTrain y uTest
-#testTrain.svd <- svd(testTrain)
-#u <- testTrain.svd$u
-#testTrainU <- u[,1:35]
-#uTrain <- as.data.frame(testTrainU[28001:70000,])
-#uTest <- as.data.frame(testTrainU[1:28000,])
+#SVD
+testTrain.svd <- svd(testTrain)
+u <- testTrain.svd$u
+testTrainU <- u[,1:35]
+uTrain <- as.data.frame(testTrainU[28001:70000,])
+uTest <- as.data.frame(testTrainU[1:28000,])
 
 class <- as.factor(train$label)
 
 #SVM RBF g = 1/20 c=64 fue el mejor de todos, aunque despues
 #va a haber que hacer gridsearch
 
-svm_model <- svm(train.features, class,type="C-classification",kernel = "radial",gamma=1/20,cost=64)
-svm_prediction <- predict(svm_model, test)
+svm_model <- svm(uTrain, class,type="C-classification",kernel = "radial",gamma=1/20,cost=64)
+svm_prediction <- predict(svm_model, uTest)
 
 out <- as.character(svm_prediction)
 
