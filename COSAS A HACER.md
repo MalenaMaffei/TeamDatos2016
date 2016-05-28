@@ -7,7 +7,10 @@
 *probar con la libreria IM de r calcular el centroide y agregar eso como dato extra a los datos ya reducidos y ver si mejora:
   https://cran.r-project.org/web/packages/IM/IM.pdf tambien puede haber otras cosas para agregar como los momentos de las imagenes
 
-  UPDATE: ya la hice yo la parte de centroides y radio maximo, subi un csv con eso. Quizas haya que ponerlo de otra forma porque varian en decimales los datos, creo que habria que normalizarlos
+  UPDATE: ya la hice yo la parte de centroides y radio maximo, subi un csv con eso. Quizas haya que ponerlo de otra forma porque varian en decimales los datos, creo que habria que normalizarlos.
+  UPDATE 2: los centroides no sirvieron de casi nada, use solo el radio maximo y mejoro 0.00014
+  
+  UPDATE 3: deje calculando los momentos. Calcule 4 momentos para que no tarde tanto, no se si no hubiera sido mejor calcular mas momentos porque no se donde esta la mayor varianza o como se diga.
 
 
 
