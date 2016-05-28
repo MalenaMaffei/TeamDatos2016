@@ -7,6 +7,11 @@
 *probar con la libreria IM de r calcular el centroide y agregar eso como dato extra a los datos ya reducidos y ver si mejora:
   https://cran.r-project.org/web/packages/IM/IM.pdf tambien puede haber otras cosas para agregar como los momentos de las imagenes
 
+  UPDATE: ya la hice yo la parte de centroides y radio maximo, subi un csv con eso. Quizas haya que ponerlo de otra forma porque varian en decimales los datos, creo que habria que normalizarlos
+
+
+
+
 *hacer un script de R para ahcer cross validation basado en el apunte de la materia.
 
 ENSAMBLES
