@@ -13,6 +13,10 @@
   
   UPDATE 3: deje calculando los momentos. Calcule 4 momentos para que no tarde tanto, no se si no hubiera sido mejor calcular mas momentos porque no se donde esta la mayor varianza o como se diga.
   No sirvieron para nada PERO habria que calcular mas momentos y seguir probando, deberian servir. Yo solo calcule grado 1, hay que volver a intentar con grado 2 
+  
+  UPDATE 4: calcule los ejes principales y los puse como feature extra, no cambio en nada la prediccion, los subi por si mas adelante sirven de algo
+  
+  UPDATE 5: calcule las coordenadas polares de todas las imagenes y las estoy usando para entrenar otro svm "fuerte" a ver si cuando el original no esta seguro, este ayuda.
 
 
 
