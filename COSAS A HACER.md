@@ -19,7 +19,9 @@
   UPDATE 5: calcule las coordenadas polares de todas las imagenes y las estoy usando para entrenar otro svm "fuerte" a ver si cuando el original no esta seguro, este ayuda.
   Aca dejo el link a mi dropbox con las polares https://www.dropbox.com/s/m1ushpjc9ceq8vj/polares.csv?dl=0 bajenlo asi pueden probar lo que se les ocurra
 
-
+  UPDATE 6: use las coordenadas polares solas, mucho menor el puntaje dio. Las guarde para poder usar en los ensambles, por ahi ahi suma algo...
+  
+  UPDATE 7: tambien hice una version de los numeros con solo 3 categorias de intensidad de pixel. Dio con eso solo por abajo pero no por tanto, una idea seria añadir eso al train normal para ver si el svm predice mejor con los dos tipos de sets. 
 
 
 *hacer un script de R para ahcer cross validation basado en el apunte de la materia.
