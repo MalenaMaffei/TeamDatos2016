@@ -17,6 +17,7 @@
   UPDATE 4: calcule los ejes principales y los puse como feature extra, no cambio en nada la prediccion, los subi por si mas adelante sirven de algo
   
   UPDATE 5: calcule las coordenadas polares de todas las imagenes y las estoy usando para entrenar otro svm "fuerte" a ver si cuando el original no esta seguro, este ayuda.
+  Aca dejo el link a mi dropbox con las polares https://www.dropbox.com/s/m1ushpjc9ceq8vj/polares.csv?dl=0 bajenlo asi pueden probar lo que se les ocurra
 
 
 
