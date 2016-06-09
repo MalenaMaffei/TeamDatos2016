@@ -25,6 +25,7 @@
 
 
 *hacer un script de R para ahcer cross validation basado en el apunte de la materia.
+  UPADTE: ya hay uno hecho, lo fui usando para los ensambles, si lo necesitan pidanmelo que lo desempolvo y lo subo aca 
 
 ENSAMBLES
 Por ahora lo que hice es decidir con un ensamble de rbfs mas tontos los casos en que la prob del digito elegido es <0.7 . otra cosa a probar es que en vez d etener un ensamble general haya uno personalizado para cada digito, por ej si un nueve salio con prob 0.69 pasarlo por varios svms que lo unico que hacen es decirnos si es o no 9 y nada mas y si sale que no es, elegir el numero con segunda mejor prob.
