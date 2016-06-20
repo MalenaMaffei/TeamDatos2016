@@ -23,6 +23,7 @@
   
   UPDATE 7: tambien hice una version de los numeros con solo 3 categorias de intensidad de pixel. Dio con eso solo por abajo pero no por tanto, una idea seria añadir eso al train normal para ver si el svm predice mejor con los dos tipos de sets.https://www.dropbox.com/s/cdf7fayil0cpeld/suavizado.csv?dl=0 aca esta el csv de esa version.
 
+*Dijo luis qe hagamos train extra con los bien predichos pero no funciono, empeoro el puntaje. Habria que usar esos datos ahora pero solo para los rfs a ver si ahi si sirve.
 
 *hacer un script de R para ahcer cross validation basado en el apunte de la materia.
   UPADTE: ya hay uno hecho, lo fui usando para los ensambles, si lo necesitan pidanmelo que lo desempolvo y lo subo aca 
@@ -32,3 +33,5 @@ Por ahora lo que hice es decidir con un ensamble de rbfs mas tontos los casos en
 
   UPDATE 1: Por lo hablado con luis, esoty intentando combinar svm con rf, no tengo mucho fundamento a lo que estoy intentando asi que estaria bueno que todos colaboremos con esto porque la clave es que alguno tenga una buena idea.
   Intente reclasificar con rf los numeros con baja prob en svm pero no sirvio. Despues hice rf solo de los digitos problematicos y reclasificar con eso, no mejoro pero esta ahi nomas del puntaje que tenemos
+  
+  UPDATE 2: hubo una minima mejora con rfs de solo digitos problematicos, dijo luis que lo dejemos asi.
