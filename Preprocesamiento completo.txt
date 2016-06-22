@@ -1,0 +1,125 @@
+#PREPROCESAMIENTO
+
+train <- read.csv("./train.csv")
+trainImReducida <- matrix(0,nrow(train),ncol=197,byrow= T)
+
+#Para sacar datos muy claros que casi ni aportan informacion (para imagenes de 28*28)
+for(i in 1:nrow(train)){
+	k=2
+	while(k < 757){
+	Dato <- as.numeric (train[i,k])
+	if (Dato < 125) { train[i,k] <- 0 }
+	k <- k+1
+	}
+
+}
+
+
+#Para pasar los datos a un solo tono de gris (para imagenes de 28*28) 
+for(i in 1:nrow(train)){
+	k=2
+	while(k < 757){
+	Dato <- as.numeric (train[i,k])
+	if (Dato != 0) { train[i,k] <- 250 }
+	k <- k+1
+	}
+
+}
+
+
+
+#Es para reducir las imagenes a 14*14
+ i=1
+ for(i in 1:nrow(train)){ 
+ k=2
+ j=2 
+ while(k < 757){
+ 
+ Dato1 <- as.numeric(train[i,k])
+ Dato2 <- as.numeric(train[i,k+1])
+ Dato3 <- as.numeric(train[i,k+28])
+ Dato4 <- as.numeric(train[i,k+29])
+ Datofinal <- as.integer((Dato1 + Dato2 + Dato3 + Dato4)/4)
+ trainImReducida[i,j] <- Datofinal
+ j <- j+1
+ if ( (k%%28) == 0 ) {k <- k+30} else {k <- k+2}
+ }
+ trainImReducida[i,1] <- as.numeric(train[i,1])
+ }
+
+
+#Para pasar las imagenes a un solo tono de blanco (para imagenes de 14*14)
+for(i in 1:nrow(trainImReducida)){
+	k=2
+	while(k < 198){
+	if (trainImReducida[i,k] != 0) { trainImReducida[i,k] <- 250 }
+	k <- k+1
+	}
+
+}
+
+#Escribir los datos en un csv
+write.table (trainImReducida,file="train3.csv",row.names=FALSE,col.names=TRUE,quote=FALSE,sep=",")
+
+
+#PREPROCESAMIENTO DE ARCHIVO TEST
+
+test <- read.csv("./test.csv")
+testImReducida <- matrix(0,nrow(test),ncol=196,byrow= T)
+
+#Para sacar datos muy claros que casi ni aportan informacion (para imagenes de 28*28)
+ for(i in 1:nrow(test)){
+ k=1
+ while(k < 757){
+ Dato <- as.numeric (test[i,k])
+ if (Dato < 125) { test[i,k] <- 0 }
+ k <- k+1
+ }
+ }
+
+#Para pasar los datos a un solo tono de gris (para imagenes de 28*28) 
+ for(i in 1:nrow(test)){
+ k=1
+ while(k < 757){
+ Dato <- as.numeric (test[i,k])
+ if (Dato != 0) { test[i,k] <- 250 }
+ k <- k+1
+ }
+ }
+
+#Es para reducir las imagenes a 14*14
+  i=1
+  for(i in 1:nrow(test)){ 
+  k=1
+  j=1 
+  while(k < 757){
+  
+  Dato1 <- as.numeric(test[i,k])
+  Dato2 <- as.numeric(test[i,k+1])
+  Dato3 <- as.numeric(test[i,k+28])
+  Dato4 <- as.numeric(test[i,k+29])
+  Datofinal <- as.integer((Dato1 + Dato2 + Dato3 + Dato4)/4)
+  testImReducida[i,j] <- Datofinal
+  j <- j+1
+  if ( (k%%27) == 0 ) {k <- k+30} else {k <- k+2}
+  }
+  }
+
+#Para pasar las imagenes a un solo tono de blanco (para imagenes de 14*14)
+ for(i in 1:nrow(testImReducida)){
+ k=1
+ while(k < 197){
+ if (testImReducida[i,k] != 0) { testImReducida[i,k] <- 250 }
+ k <- k+1
+ }
+ 
+ }
+
+#Para guardar los datos
+write.table (testImReducida,file="test3.csv",row.names=FALSE,col.names=TRUE,quote=FALSE,sep=",")
+
+
+
+
+
+
